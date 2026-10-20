@@ -44,8 +44,8 @@
       "cv_val_roc_auc_mean": 0.5,
       "cv_val_roc_auc_std": 0.0,
       "cv_val_f1_mean": 0.0,
-      "train_time_ms": 38.43,
-      "inference_latency_ms_per_1k": 0.076,
+      "train_time_ms": 35.77,
+      "inference_latency_ms_per_1k": 0.078,
       "optimal_threshold": 0.5,
       "train_metrics_050": {
         "threshold": 0.5,
@@ -932,8 +932,8 @@
       "cv_val_roc_auc_mean": 0.909,
       "cv_val_roc_auc_std": 0.0069,
       "cv_val_f1_mean": 0.737,
-      "train_time_ms": 97.64,
-      "inference_latency_ms_per_1k": 0.096,
+      "train_time_ms": 152.73,
+      "inference_latency_ms_per_1k": 0.229,
       "optimal_threshold": 0.58,
       "train_metrics_050": {
         "threshold": 0.5,
@@ -2090,8 +2090,8 @@
       "cv_val_roc_auc_mean": 0.9043,
       "cv_val_roc_auc_std": 0.008,
       "cv_val_f1_mean": 0.7327,
-      "train_time_ms": 3552.62,
-      "inference_latency_ms_per_1k": 16.503,
+      "train_time_ms": 5116.11,
+      "inference_latency_ms_per_1k": 35.849,
       "optimal_threshold": 0.44,
       "train_metrics_050": {
         "threshold": 0.5,
@@ -3248,8 +3248,8 @@
       "cv_val_roc_auc_mean": 0.9033,
       "cv_val_roc_auc_std": 0.0085,
       "cv_val_f1_mean": 0.7367,
-      "train_time_ms": 700.97,
-      "inference_latency_ms_per_1k": 0.975,
+      "train_time_ms": 693.71,
+      "inference_latency_ms_per_1k": 1.108,
       "optimal_threshold": 0.41,
       "train_metrics_050": {
         "threshold": 0.5,
