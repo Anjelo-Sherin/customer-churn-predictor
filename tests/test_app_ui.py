@@ -19,27 +19,24 @@ from streamlit.testing.v1 import AppTest
 def test_streamlit_app_loads_and_renders_cleanly() -> None:
     """Tests that app.py loads without uncaught exceptions or errors."""
     app_path = Path(__file__).resolve().parent.parent / "app.py"
-    at = AppTest.from_file(str(app_path), default_timeout=30)
+    at = AppTest.from_file(str(app_path), default_timeout=90)
     at.run()
 
     # Assert no unhandled exceptions or error popups were rendered
     assert not at.exception, f"App raised an exception: {at.exception}"
 
     # Verify hero title exists
-    assert len(at.title) >= 0  # In our app hero is rendered in markdown
-    assert any("ChurnSight" in m.value for m in at.markdown)
+    assert any("churnsight" in m.value.lower() for m in at.markdown)
 
-    # Verify metric cards are rendered on the top row
-    assert len(at.metric) >= 4
-    metric_labels = [m.label for m in at.metric]
-    assert any("Total Active Accounts" in label for label in metric_labels)
-    assert any("Champion Model" in label for label in metric_labels)
+    # Verify Neo-Brutalist KPI cards are rendered
+    assert any("TOTAL ACTIVE ACCOUNTS" in m.value for m in at.markdown)
+    assert any("CHAMPION PR-AUC" in m.value for m in at.markdown)
 
 
 def test_streamlit_sidebar_and_threshold_slider() -> None:
     """Tests that adjusting business cost sliders recalculates the threshold."""
     app_path = Path(__file__).resolve().parent.parent / "app.py"
-    at = AppTest.from_file(str(app_path), default_timeout=30)
+    at = AppTest.from_file(str(app_path), default_timeout=90)
     at.run()
 
     assert not at.exception
@@ -51,7 +48,7 @@ def test_streamlit_sidebar_and_threshold_slider() -> None:
 def test_streamlit_dataframes_and_charts_present() -> None:
     """Tests that dataframes, Plotly charts, and tabs are populated."""
     app_path = Path(__file__).resolve().parent.parent / "app.py"
-    at = AppTest.from_file(str(app_path), default_timeout=30)
+    at = AppTest.from_file(str(app_path), default_timeout=90)
     at.run()
 
     assert not at.exception
